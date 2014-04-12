@@ -6,6 +6,9 @@
         "localforage": "~0.3.1",
         "es6-promise": "~0.1.1"
     },
+    "devDependencies": {
+    	"requirejs": "~2.1.11"
+    },
     "homepage": "https://github.com/evill/client_async_storage",
     "private": true
 }

@@ -1,7 +1,5 @@
-(function (global) {
+define(['./Database'], function (Database) {
     "use strict";
-
-    var Database = global.asyncDataStorage.Database;
 
     var databases = {};
 
@@ -40,5 +38,5 @@
         }
     };
 
-    global.asyncDataStorage.Storage = Storage;
-})(this);
+    return Storage;
+});

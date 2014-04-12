@@ -1,4 +1,4 @@
-(function (global) {
+define(function () {
     "use strict";
 
     var items = {};
@@ -162,5 +162,5 @@
         }
     };
 
-    global.asyncDataStorage.Collection = Collection;
-})(this);
+    return Collection;
+});

@@ -1,7 +1,6 @@
-(function (global) {
-    "use strict";
+define(['./Collection'], function (Collection) {
 
-    var Collection = global.asyncDataStorage.Collection;
+    "use strict";
 
     var Database = function Database (dataStorage, name) {
         this._dataStorage = dataStorage;
@@ -14,7 +13,6 @@
     Database.prototype = {
         constructor: Database,
         getCollection: function(name) {
-
             if (!this._collections.hasOwnProperty(name)) {
                 this._collections[name] = new Collection(this, name);
             }
@@ -35,5 +33,5 @@
         }
     };
 
-    global.asyncDataStorage.Database = Database;
-})(this);
+    return Database;
+});
