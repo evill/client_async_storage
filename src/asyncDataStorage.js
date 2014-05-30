@@ -1,3 +1,6 @@
+/**
+ * @module ClientAsyncStorage
+ */
 define(['localforage', './Storage'], function (localforage, Storage) {
     return {
         createStorage: function (identifier)
@@ -15,5 +18,5 @@ define(['localforage', './Storage'], function (localforage, Storage) {
                 );
             });
         }
-    }
+    };
 });

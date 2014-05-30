@@ -1,9 +1,21 @@
 define(function () {
     "use strict";
 
-    var items = {};
-
+    /**
+     * Implements collection with records with stores and resolves records data
+     * from storage
+     * @class Collection
+     * @memberOf ClientAsyncStorage
+     *
+     * @param {Database} database Database which holds collection
+     * @param {String} name Name of collection
+     */
     var Collection = function Collection (database, name) {
+        /**
+         * Contains database of current collection
+         *
+         * @property {Database} Collection#_database
+         */
         this._database = database;
 
         this._name = name;
@@ -21,8 +33,7 @@ define(function () {
 
     Collection.prototype = {
         constructor: Collection,
-        _init: function (resolve, reject)
-        {
+        _init: function (resolve, reject) {
             this._database.storage().ready().then(
                 this._handleStorageReadySuccess.bind(this, resolve, reject),
                 this._handleStorageReadyError.bind(this, reject)
