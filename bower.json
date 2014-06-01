@@ -1,5 +1,5 @@
 {
-    "name": "client_async_storage",
+    "name": "client_storage",
     "description": "Interlayer for work with client database in browsers",
     "version": "0.0.1",
     "dependencies": {
@@ -7,7 +7,8 @@
         "es6-promise": "~0.1.1"
     },
     "devDependencies": {
-    	"requirejs": "~2.1.11"
+    	"requirejs": "~2.1.11",
+        "mocha": "*"
     },
     "homepage": "https://github.com/evill/client_async_storage",
     "private": true

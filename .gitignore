@@ -1,3 +1,5 @@
 bower_components
+node_modules
 client_async_storage.sublime-project
 client_async_storage.sublime-workspace
+.travis.yml

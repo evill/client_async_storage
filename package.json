@@ -1,0 +1,29 @@
+{
+	"name" : "client_storage",
+	"version" : "0.0.1",
+	"description" : "Library provides functionality for work with databases which can stores data of client side application. Based on client storages like localStorage, IndexedDb, WebSQL.",
+	"keywords" : ["localStorage", "IndexedDb", "WebSQL", "storage", "database"],
+	"homepage" : "https://github.com/evill/client_async_storage/wiki",
+	"bugs" : {
+		"url": "https://github.com/evill/client_async_storage/issues"
+	},
+	"repository" : {
+ 		"type" : "git",
+ 		"url" : "https://github.com/evill/client_async_storage.git"
+ 	},
+	"license": "BSD-3-Clause",
+	"author": {
+		"name" : "Igor Tretyakov",
+		"email" : "igorexat@gmail.com"
+	},
+	"main" : "clientstorage.js",
+	"scripts" : {
+		"test": ""
+	},
+	"devDependencies": {
+		"bower": "*",
+		"mocha": "*",
+		"chai": "*"
+	},
+	"private": true 
+}
