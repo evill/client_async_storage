@@ -1,29 +1,62 @@
+/**
+ * Constructor represents collection which stores and
+ * resolves records data  from client storage
+ * @class Collection
+ * @memberOf clientstorage
+ */
 define(function () {
     "use strict";
 
     /**
-     * Implements collection with records with stores and resolves records data
-     * from storage
-     * @class Collection
-     * @memberOf ClientAsyncStorage
+     * @constructor
      *
      * @param {Database} database Database which holds collection
      * @param {String} name Name of collection
      */
     var Collection = function Collection (database, name) {
+        if (!database || (typeof(database) !== 'object'))
+        {
+            throw new TypeError("Bad database type!");
+        }
+
+        if (typeof(name) !== 'string')
+        {
+            throw new TypeError("Bad collection name type!");
+        }
         /**
          * Contains database of current collection
          *
          * @property {Database} Collection#_database
+         * @private
          */
         this._database = database;
-
+        /**
+         * Name of storage collection
+         * 
+         * @property {String} _name
+         * @private
+         */
         this._name = name;
-
+        /**
+         * List of collection records
+         * 
+         * @property {Object} records
+         * @private
+         */
         this._records = null;
-
+        /**
+         * State of collection instance
+         * 
+         * @property {Boolean} _readyState
+         * @private
+         */
         this._readyState = false;
-
+        /**
+         * Promise for ready state
+         * 
+         * @property {Promise} _readyPromise
+         * @private
+         */
         this._readyPromise = new Promise(this._init.bind(this));
 
         this._readyPromise.then(function setReady () {
